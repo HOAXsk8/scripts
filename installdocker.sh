@@ -17,4 +17,9 @@ sudo apt update
 
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+echo "Adding user $USER to the docker group..."
+sudo usermod -aG docker $USER
+echo "-----------------------------------------------------------------------------"
+echo "|***Checking the Docker service has successfully installed and is running***|"
+echo "-----------------------------------------------------------------------------"
 sudo systemctl status docker
